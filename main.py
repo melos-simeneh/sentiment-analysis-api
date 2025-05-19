@@ -7,7 +7,7 @@ model = joblib.load("model/sentiment_model.pkl")
 
 @app.get("/api/")
 def health_check():
-    return {"status": "Sentiment Analysis API is running."}
+    return {"message": "Sentiment Analysis API is running."}
 
 @app.post("/api/predict", response_model=SentimentResponse)
 def predict_sentiment(req: SentimentRequest):
